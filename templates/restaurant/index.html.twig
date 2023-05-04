@@ -12,7 +12,13 @@
     <h1>Restaurant</h1>
 
     <!--La liste des resto-->
-        {%  %}
+        {% for restaurant in restaurants  %}
+            <ul>
+                <li>{{ restaurant.name }}</li>
+                <li>{{ restaurant.description }}</li>
+                <li>{{ restaurant.createdAt }}</li>
+            </ul>
+        {% endfor %}
     <!--Ajouter un resto-->
 
     <!--Modifier / MàJ un resto-->

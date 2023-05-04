@@ -21,7 +21,7 @@ class RestaurantPicture
     private ?string $file = null;
 
     #[ORM\ManyToOne(inversedBy: 'Pictures_id')]
-    private ?restaurant $restaurant_id = null;
+    private ?Restaurant $restaurant_id = null;
 
     public function getId(): ?int
     {
@@ -52,12 +52,12 @@ class RestaurantPicture
         return $this;
     }
 
-    public function getRestaurantId(): ?restaurant
+    public function getRestaurantId(): ?Restaurant
     {
         return $this->restaurant_id;
     }
 
-    public function setRestaurantId(?restaurant $restaurant_id): self
+    public function setRestaurantId(?Restaurant $restaurant_id): self
     {
         $this->restaurant_id = $restaurant_id;
 

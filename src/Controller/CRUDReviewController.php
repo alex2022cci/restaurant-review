@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/c/r/u/d/review')]
+#[Route('/CRUDreview')]
 class CRUDReviewController extends AbstractController
 {
     #[Route('/', name: 'app_c_r_u_d_review_index', methods: ['GET'])]

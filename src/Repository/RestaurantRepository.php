@@ -42,10 +42,10 @@ class RestaurantRepository extends ServiceEntityRepository
 //    /**
 //     * @return Restaurant[] Returns an array of Restaurant objects
 //     */
-//    public function findByExampleField($value): array
+//    public function findAllRestaurant($value): array
 //    {
 //        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
+//            ->andWhere('r.* = :val')
 //            ->setParameter('val', $value)
 //            ->orderBy('r.id', 'ASC')
 //            ->setMaxResults(10)

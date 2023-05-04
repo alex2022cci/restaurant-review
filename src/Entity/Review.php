@@ -27,10 +27,10 @@ class Review
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'review_user_id')]
-    private ?user $user_id = null;
+    private ?User $user_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'review_restaurant_id')]
-    private ?restaurant $restaurant_id = null;
+    private ?Restaurant $restaurant_id = null;
 
     #[ORM\OneToMany(mappedBy: 'review_answer_id', targetEntity: Review::class)]
     private Collection $review_answer;
@@ -81,24 +81,24 @@ class Review
         return $this;
     }
 
-    public function getUserId(): ?user
+    public function getUserId(): ?User
     {
         return $this->user_id;
     }
 
-    public function setUserId(?user $user_id): self
+    public function setUserId(?User $user_id): self
     {
         $this->user_id = $user_id;
 
         return $this;
     }
 
-    public function getRestaurantId(): ?restaurant
+    public function getRestaurantId(): ?Restaurant
     {
         return $this->restaurant_id;
     }
 
-    public function setRestaurantId(?restaurant $restaurant_id): self
+    public function setRestaurantId(?Restaurant $restaurant_id): self
     {
         $this->restaurant_id = $restaurant_id;
 

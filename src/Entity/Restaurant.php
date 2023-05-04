@@ -30,7 +30,7 @@ class Restaurant
     private ?City $city_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'restaurant_id')]
-    private ?user $user_id = null;
+    private ?User $user_id = null;
 
     #[ORM\OneToMany(mappedBy: 'restaurant_picture_id', targetEntity: RestaurantPicture::class)]
     private Collection $Pictures_id;
@@ -97,12 +97,12 @@ class Restaurant
         return $this;
     }
 
-    public function getUserId(): ?user
+    public function getUserId(): ?User
     {
         return $this->user_id;
     }
 
-    public function setUserId(?user $user_id): self
+    public function setUserId(?User $user_id): self
     {
         $this->user_id = $user_id;
 
