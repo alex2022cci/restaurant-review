@@ -32,13 +32,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\ManyToOne(inversedBy: 'user_id')]
-    private ?city $city_id = null;
+    #[ORM\ManyToOne(inversedBy: 'user_city_id')]
+    private ?City $city_id = null;
 
-    #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Restaurant::class)]
+    #[ORM\OneToMany(mappedBy: 'user_restaurant_id', targetEntity: Restaurant::class)]
     private Collection $restaurant_id;
 
-    #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Review::class)]
+    #[ORM\OneToMany(mappedBy: 'user_review_id', targetEntity: Review::class)]
     private Collection $review_id;
 
     public function __construct()
@@ -117,12 +117,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getCityId(): ?city
+    public function getCityId(): ?City
     {
         return $this->city_id;
     }
 
-    public function setCityId(?city $city_id): self
+    public function setCityId(?City $city_id): self
     {
         $this->city_id = $city_id;
 

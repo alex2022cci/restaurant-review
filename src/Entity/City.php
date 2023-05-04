@@ -1,14 +1,15 @@
 <?php
-
 namespace App\Entity;
 
-use App\Repository\CityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+
+
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CityRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: CityRepository::class)]
-class City
+class City 
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,10 +22,10 @@ class City
     #[ORM\Column]
     private ?int $zipcode = null;
 
-    #[ORM\OneToMany(mappedBy: 'city_id', targetEntity: User::class)]
+    #[ORM\OneToMany(mappedBy: 'city_user_id', targetEntity: User::class)]
     private Collection $user_id;
 
-    #[ORM\OneToMany(mappedBy: 'city_id', targetEntity: Restaurant::class)]
+    #[ORM\OneToMany(mappedBy: 'city_restaurant_id', targetEntity: Restaurant::class)]
     private Collection $restaurant_id;
 
     public function __construct()

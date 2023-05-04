@@ -9,12 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Restaurant review  ~ HomePage ~</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/restaurant-review/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/restaurant-review/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
+    <p>Restaurant review is a web application that allows you to search for restaurants and leave reviews.</p>
+
+    <a href="{{ path('register') }}">Register</a>
+
+    <a href="{{ path('login') }}">Login</a>
+
+   
 </div>
 {% endblock %}

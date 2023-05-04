@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Entity;
+
+
 
 use App\Repository\ReviewRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -25,13 +26,13 @@ class Review
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\ManyToOne(inversedBy: 'review_id')]
+    #[ORM\ManyToOne(inversedBy: 'review_user_id')]
     private ?user $user_id = null;
 
-    #[ORM\ManyToOne(inversedBy: 'review_id')]
+    #[ORM\ManyToOne(inversedBy: 'review_restaurant_id')]
     private ?restaurant $restaurant_id = null;
 
-    #[ORM\OneToMany(mappedBy: 'review_id', targetEntity: Review::class)]
+    #[ORM\OneToMany(mappedBy: 'review_answer_id', targetEntity: Review::class)]
     private Collection $review_answer;
 
     public function __construct()

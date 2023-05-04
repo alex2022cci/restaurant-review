@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Entity;
+
+
 
 use App\Repository\RestaurantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -26,15 +27,15 @@ class Restaurant
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'restaurant_id')]
-    private ?city $city_id = null;
+    private ?City $city_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'restaurant_id')]
     private ?user $user_id = null;
 
-    #[ORM\OneToMany(mappedBy: 'restaurant_id', targetEntity: RestaurantPicture::class)]
+    #[ORM\OneToMany(mappedBy: 'restaurant_picture_id', targetEntity: RestaurantPicture::class)]
     private Collection $Pictures_id;
 
-    #[ORM\OneToMany(mappedBy: 'restaurant_id', targetEntity: Review::class)]
+    #[ORM\OneToMany(mappedBy: 'restaurant_review_id', targetEntity: Review::class)]
     private Collection $review_id;
 
     public function __construct()

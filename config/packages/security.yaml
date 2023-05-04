@@ -23,6 +23,46 @@ security:
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
+            form_login:
+                login_path: login
+                check_path: login
+                # csrf_token_generator: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.8
+                # csrf_token_id: authenticate
+                # use_referer: true
+                # always_use_default_target_path: true
+                # default_target_path: /
+                # target_path_parameter: _target_path
+                # use_referer: true
+                # failure_path: null
+                # failure_forward: false
+                # username_parameter: _username
+                # password_parameter: _password
+                # csrf_parameter: _csrf_token
+                # intention: authenticate
+                # post_only: true
+                # remember_me: true
+                # remember_me_parameter: _remember_me
+                # require_previous_session: false
+                # success_handler: security.authentication.custom_success_handler
+                # failure_handler: security.authentication.custom_failure_handler
+                # check_path: /login_check
+                # login_path: /login
+                # always_use_default_target_path: false
+                # default_target_path: /
+                # target_path_parameter: _target_path
+                # use_referer: false
+                # failure_path: null
+                # failure_forward: false
+                # username_parameter: _username
+                # password_parameter: _password
+                # csrf_parameter: _csrf_token
+                # intention: authenticate
+                # post_only: true
+                # remember_me: true
+                # remember_me_parameter: _remember_me
+                # require_previous_session: false
+                # success_handler: security.authentication.custom_success_handler
+                # failure_handler: security.authentication.custom_failure_handler
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
