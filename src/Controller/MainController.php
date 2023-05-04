@@ -16,6 +16,9 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/app', name: 'app')]
+    #[IsGranted('ROLE_ADMIN')]
+
     
 
 }
